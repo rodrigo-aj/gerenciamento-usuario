@@ -1,0 +1,18 @@
+Descrição do teste:
+
+    - Criar um projeto utilizando ASP.NET, contendo um front-end e envio de dados para o back-end;
+    - O back-end deve ser feito em C# e o front-end utilizando apenas jQuery como biblioteca;
+    - O projeto deve ter apenas dois módulos (ou “menus”): Criar e consultar;
+    - Preferencialmente, o projeto terá uma interface “apresentável” e responsiva;
+    - A persistência dos dados deve ser feita em um banco de dados. Utilize SQL Server ou MySQL e inclua o script de criação das tabelas no repositório.
+Módulo "criar":
+
+    - Criar um formulário para envio dos dados de uma pessoa com as seguintes informações: CPF, nome e e-mail.
+    - Os campos de CPF e e-mail devem ter máscaras de jQuery aplicadas em seus elementos de input;
+    - Os mesmos campos citados anteriormente devem ser validados no front-end e no back-end e retornar um erro caso não sejam válidos.
+- Ao finalizar o envio dos dados, exibir uma mensagem para o usuário indicando que os dados foram enviados com sucesso. Ao fazer isso, “limpe” os valores dos campos do formulário.
+Módulo "consultar":
+
+    - Criar um único elemento de Input que receba o CPF da pessoa desejada; O campo deve possuir uma máscara de CPF;
+    - Um botão deve estar visível para buscar pelo CPF;
+    - Ao buscar, formatar as informações do usuário desejado na página (seu telefone, CPF e e-mail) caso o mesmo tenha sido encontrado; senão, exibir uma mensagem de aviso informando que ele não foi encontrado.
