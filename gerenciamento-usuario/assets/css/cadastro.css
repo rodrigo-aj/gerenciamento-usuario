@@ -47,7 +47,6 @@
         margin-top: 20px;
     }
 
-
     .registration-form .social-icons {
         margin-top: 30px;
         margin-bottom: 16px;
@@ -69,4 +68,22 @@
         font-size: 30px;
         line-height: 70px;
     }
+}
+
+
+.error-msg {
+    margin: 10px 0px;
+    padding: 12px;
+    color: #d8000c;
+    background-color: #ffd2d2;
+}
+
+    .error-msg i {
+        margin: 10px 22px;
+        font-size: 2em;
+        vertical-align: middle;
+    }
+
+.navbar {
+    background-color: #bae1ff !important;
 }
