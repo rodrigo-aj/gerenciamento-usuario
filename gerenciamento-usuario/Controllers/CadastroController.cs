@@ -6,12 +6,10 @@ using System.Web.Mvc;
 
 namespace gerenciamento_usuario.Controllers
 {
-    public class HomeController : Controller
+    public class CadastroController : Controller
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
-
             return View();
         }
     }

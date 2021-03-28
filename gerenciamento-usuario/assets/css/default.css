@@ -71,18 +71,26 @@
 }
 
 
+.success-msg {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+}
+
 .error-msg {
-    margin: 10px 0px;
-    padding: 12px;
     color: #d8000c;
     background-color: #ffd2d2;
 }
 
-    .error-msg i {
+    .error-msg i, .success-msg i {
         margin: 10px 22px;
         font-size: 2em;
         vertical-align: middle;
     }
+
+.error-msg, .success-msg {
+    margin: 10px 0px;
+    padding: 12px;
+}
 
 .navbar {
     background-color: #bae1ff !important;
