@@ -4,6 +4,7 @@
     $('#divErroCpf').hide();
     $('#divErroEmail').hide();
     $('#divSuccessCadastro').hide();
+    $('#divException').hide();
     $('#btnSubmit').prop('disabled', true);
 
     $('#inptUsuarioCpf').change(function () {
@@ -102,14 +103,28 @@
 
                 }
 
-                if (data.CodResultado == -1) {
-                    $("#divErroCpf").show().delay(4000).queue(function (n) {
-                        $(this).hide(); n();
-                    });
-                }
+                //if (data.CodResultado == -1) {
+                //    $("#divErroCpf").show().delay(4000).queue(function (n) {
+                //        $(this).hide(); n();
+                //    });
+                //}
 
-                if (data.CodResultado == -2) {
-                    $("#divErroEmail").show().delay(4000).queue(function (n) {
+                //if (data.CodResultado == -2) {
+                //    $("#divErroEmail").show().delay(4000).queue(function (n) {
+                //        $(this).hide(); n();
+                //    });
+                //}
+
+                //if (data.CodResultado == -3) {
+                //    $("#divException").show().delay(4000).queue(function (n) {
+                //        $(this).hide(); n();
+                //    });
+                //}
+
+                if (data.CodResultado < 0) {
+                    $("#lblErroCustom").text(data.DescricaoResultado);
+
+                    $("#divException").show().delay(4000).queue(function (n) {
                         $(this).hide(); n();
                     });
                 }

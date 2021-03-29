@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.ComponentModel.DataAnnotations;
+using System.Text.RegularExpressions;
 
 namespace gerenciamento_usuario.Controllers
 {
@@ -99,10 +100,14 @@ namespace gerenciamento_usuario.Controllers
 
 
 
-        public static bool validaEmail(string email)
+        public static bool ValidaEmail(string email)
         {
             return new EmailAddressAttribute().IsValid(email);
         }
 
+        public static string RemoverCaracteresEspeciais(string str)
+        {
+            return Regex.Replace(str, @"[^0-9a-zA-Z:,]+", "");
+        }
     }
 }

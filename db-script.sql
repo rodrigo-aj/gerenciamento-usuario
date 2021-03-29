@@ -1,0 +1,7 @@
+CREATE TABLE usuario (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    cpf VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    UNIQUE KEY unique_cpf (cpf)
+)  ENGINE=INNODB;
