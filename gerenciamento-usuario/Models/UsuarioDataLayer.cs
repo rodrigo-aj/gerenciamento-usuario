@@ -26,7 +26,7 @@ namespace gerenciamento_usuario.Models.Cadastro
                     {
                         return new Resultado
                         {
-                            CodResultado = -4,
+                            CodResultado = -1,
                             DescricaoResultado = "CPF já cadastrado!"
                         };
                     }
@@ -60,7 +60,7 @@ namespace gerenciamento_usuario.Models.Cadastro
                 {
                     return new Resultado
                     {
-                        CodResultado = -3,
+                        CodResultado = -1,
                         DescricaoResultado = "Não foi possível inserir registro. Erro: " + ex.Message
                     };
                 }
@@ -86,14 +86,14 @@ namespace gerenciamento_usuario.Models.Cadastro
 
                     p.Add("@cpf", cpf, dbType: DbType.String, direction: ParameterDirection.Input);
 
-                    return db.Query<Usuario>(@"select nome, cpf, email from usuario u where u.cpf = @cpf", p, commandType: CommandType.Text).FirstOrDefault();
+                    return db.Query<Usuario>(@"select id, nome, cpf, email from usuario u where u.cpf = @cpf", p, commandType: CommandType.Text).FirstOrDefault();
 
                 }
                 catch (Exception ex)
                 {
                     return new Usuario
                     {
-                        Id = -3,
+                        Id = -1,
                         Nome = "Não foi possível realizar busca. Erro: " + ex.Message
                     };
                 }

@@ -58,14 +58,19 @@
                 <input class="form-control item" id="inptUsuarioEmailPesquisa" placeholder="E-mail" disabled>
             </div>
 
+            <div class="error-msg" id="divErroCpf">
+                <i class="fa fa-times-circle"></i>
+                CPF Inválido
+            </div>
+
             <div class="success-msg" id="divSuccessConsulta">
                 <i class="fa fa-check"></i>
                 Consulta realizada com êxito!
             </div>
 
-            <div class="error-msg" id="divErroConsulta">
+            <div class="error-msg" id="divErroCustomConsulta">
                 <i class="fa fa-times-circle"></i>
-                Não foi possível realizar busca!
+                <label id="lblErroCustomConsulta"></label>
             </div>
         </form>
     </div>

@@ -4,7 +4,7 @@
     $('#divErroCpf').hide();
     $('#divErroEmail').hide();
     $('#divSuccessCadastro').hide();
-    $('#divException').hide();
+    $('#divErroCustomCadastro').hide();
     $('#btnSubmit').prop('disabled', true);
 
     $('#inptUsuarioCpf').change(function () {
@@ -30,9 +30,6 @@
         if (v[0] != cpf[9] || v[1] != cpf[10]) {
             $('#divErroCpf').show();
             $('#btnSubmit').prop('disabled', true);
-
-            $('#cpf').val('');
-            $('#cpf').focus();
         } else if (
             cpf[0] == cpf[1] &&
             cpf[1] == cpf[2] &&
@@ -80,7 +77,7 @@
         e.stopPropagation();
 
         $.ajax({
-            url: "/gerenciamento-usuario/api/ApiCadastro/cadastrar-usuario",
+            url: "/gerenciamento-usuario/api/ApiUsuario/cadastrar-usuario",
             type: 'POST',
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -103,28 +100,10 @@
 
                 }
 
-                //if (data.CodResultado == -1) {
-                //    $("#divErroCpf").show().delay(4000).queue(function (n) {
-                //        $(this).hide(); n();
-                //    });
-                //}
-
-                //if (data.CodResultado == -2) {
-                //    $("#divErroEmail").show().delay(4000).queue(function (n) {
-                //        $(this).hide(); n();
-                //    });
-                //}
-
-                //if (data.CodResultado == -3) {
-                //    $("#divException").show().delay(4000).queue(function (n) {
-                //        $(this).hide(); n();
-                //    });
-                //}
-
                 if (data.CodResultado < 0) {
-                    $("#lblErroCustom").text(data.DescricaoResultado);
+                    $("#lblErroCustomCadastro").text(data.DescricaoResultado);
 
-                    $("#divException").show().delay(4000).queue(function (n) {
+                    $("#divErroCustomCadastro").show().delay(4000).queue(function (n) {
                         $(this).hide(); n();
                     });
                 }

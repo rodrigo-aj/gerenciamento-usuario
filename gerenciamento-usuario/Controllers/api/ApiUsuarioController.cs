@@ -26,28 +26,77 @@ namespace gerenciamento_usuario.Controllers.api
                 {
                     return new Resultado
                     {
-                        CodResultado = -2,
+                        CodResultado = -1,
                         DescricaoResultado = "E-mail Inválido"
                     };
                 }
                 else
                 {
-                    UsuarioDataLayer cadDL = new UsuarioDataLayer();
+                    UsuarioDataLayer userDL = new UsuarioDataLayer();
 
                     usuario.Cpf = UtilsController.RemoverCaracteresEspeciais(usuario.Cpf);
 
-                    return cadDL.InserirUsuario(usuario);
+                    return userDL.InserirUsuario(usuario);
                 }
             }
             catch (Exception ex)
             {
                 return new Resultado
                 {
-                    CodResultado = -3,
+                    CodResultado = -1,
                     DescricaoResultado = "Não foi possível inserir registro. Erro: " + ex.Message
                 };
             }
         }
 
+        [HttpGet]
+        [ActionName("pesquisar-usuario")]
+        public Usuario PesquisarUsuario(String cpf)
+        {
+            try
+            {
+
+                if (!UtilsController.ValidaCPF(cpf))
+                {
+                    return new Usuario
+                    {
+                        Id = -1,
+                        Nome = "CPF Inválido"
+                    };
+                }
+                else
+                {
+                    UsuarioDataLayer userDL = new UsuarioDataLayer();
+
+                    cpf = UtilsController.RemoverCaracteresEspeciais(cpf.ToString());
+
+                    var usuarioPesquiado = userDL.PesquisaUsuarioByCpf(cpf);
+
+                    if (usuarioPesquiado == null)
+                    {
+                        return new Usuario
+                        {
+                            Id = -1,
+                            Nome = "Usuário não encontrado!"
+                        };
+                    }
+                    else
+                    {
+                        return usuarioPesquiado;
+                    }
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return new Usuario
+                {
+                    Id = -1,
+                    Nome = "Não foi possível realizar pesquisa. Erro: " + ex.Message
+                };
+            }
+        }
+        
     }
 }
