@@ -6,10 +6,12 @@ using System.Data.Entity;
 
 namespace gerenciamento_usuario.Models
 {
-    //public class ContextUsuario : DbContext
-    //{
-    //    public ContextUsuario() : base("aa") { }
-    //}
+    public class ContextUsuario : DbContext
+    {
+        public ContextUsuario() : base("mysql_connection") { }
 
-    public class ContextUsuario { }
+        public DbSet<Usuario> Usuario { get; set; }
+
+    }
+
 }

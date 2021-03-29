@@ -3,6 +3,7 @@
 
     $('#divErroCpf').hide();
     $('#divErroEmail').hide();
+    $('#divSuccessCadastro').hide();
     $('#btnSubmit').prop('disabled', true);
 
     $('#inptUsuarioCpf').change(function () {
@@ -70,6 +71,52 @@
             }
         }
     })
+
+    $("#formCadastro").on('submit', function (e) {
+
+        //evitar que a página faça reload assim que o completar a request
+        e.preventDefault();
+        e.stopPropagation();
+
+        $.ajax({
+            url: "/gerenciamento-usuario/api/ApiCadastro/cadastrar-usuario",
+            type: 'POST',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify({
+                Nome: $("#inptUsuarioNome").val(),
+                Cpf: $("#inptUsuarioCpf").val(),
+                Email: $("#inptUsuarioEmail").val()
+            }),
+            async: false,
+            success: function (data) {
+                if (data.CodResultado == 200) {
+                    $("#divSuccessCadastro").show().delay(4000).queue(function (n) {
+                        $(this).hide(); n();
+                    });
+
+                    //limpando todos os inputs
+                    $(':input', '#formCadastro')
+                        .not(':button, :submit, :reset, :hidden')
+                        .val('')
+
+                }
+
+                if (data.CodResultado == -1) {
+                    $("#divErroCpf").show().delay(4000).queue(function (n) {
+                        $(this).hide(); n();
+                    });
+                }
+
+                if (data.CodResultado == -2) {
+                    $("#divErroEmail").show().delay(4000).queue(function (n) {
+                        $(this).hide(); n();
+                    });
+                }
+            }
+        });
+
+    });
 
 });
 

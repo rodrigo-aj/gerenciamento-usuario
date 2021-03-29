@@ -63,8 +63,8 @@ C:\Users\Rodrigo\source\repos\gerenciamento-usuario\gerenciamento-usuario\bin\Sy
 C:\Users\Rodrigo\source\repos\gerenciamento-usuario\gerenciamento-usuario\bin\System.Web.WebPages.Deployment.xml
 C:\Users\Rodrigo\source\repos\gerenciamento-usuario\gerenciamento-usuario\bin\System.Web.WebPages.Razor.xml
 C:\Users\Rodrigo\source\repos\gerenciamento-usuario\gerenciamento-usuario\bin\Antlr3.Runtime.pdb
+C:\Users\Rodrigo\source\repos\gerenciamento-usuario\gerenciamento-usuario\obj\Debug\gerenciamento-usuario.csprojAssemblyReference.cache
 C:\Users\Rodrigo\source\repos\gerenciamento-usuario\gerenciamento-usuario\obj\Debug\gerenciamento-usuario.csproj.CoreCompileInputs.cache
 C:\Users\Rodrigo\source\repos\gerenciamento-usuario\gerenciamento-usuario\obj\Debug\gerenciamento-usuario.csproj.CopyComplete
 C:\Users\Rodrigo\source\repos\gerenciamento-usuario\gerenciamento-usuario\obj\Debug\gerenciamento-usuario.dll
 C:\Users\Rodrigo\source\repos\gerenciamento-usuario\gerenciamento-usuario\obj\Debug\gerenciamento-usuario.pdb
-C:\Users\Rodrigo\source\repos\gerenciamento-usuario\gerenciamento-usuario\obj\Debug\gerenciamento-usuario.csprojAssemblyReference.cache
